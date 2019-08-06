@@ -1,6 +1,7 @@
 # BaiduXJTU_BigData_2019_Semi-Final
 # **[Urban Region Function Classification](https://dianshi.baidu.com/competition/30/rank) Top18 Solution**
 
+---
 ## Team Brief Intro.
 #### Team Name: 
 - 浑南摸鱼队
@@ -13,8 +14,11 @@
 - Preliminary: Rank 17
 - Semi-Final: Rank 18
 
+---
 ## Mission Descriptions
-Build models to classify the functions of urban areas({Area_ID}.jpg) with data of satellite images and user behavior({Area_ID}.txt) from given geographical areas.
+
+Build models to classify the functions of urban areas({Area_ID}.jpg) with data of satellite images and user behavior({Area_ID}.txt) from given geographical areas.  
+
 - Tables of the functions of urban areas:
 
 CategoryID | Functions of Areas
@@ -28,26 +32,27 @@ CategoryID | Functions of Areas
 007	| Shopping area
 008	| Administrative district
 009	| Hospital
-  
-For more Detailed Task descriptions, please go to [DianShi](https://dianshi.baidu.com/competition/30/question) 
+For more Detailed Task descriptions, please go to [DianShi](https://dianshi.baidu.com/competition/30/question)  
 
+---
 ## Environmental Requirements
 
 #### OS & GPU Configurations:
 - Ubuntu 18.04.1 LTS
-- 1080Tix1 + 1060Mx1
-- Baidu AI Studio (For Model I 36 Networks Training)
+- GTX 1080Ti x 1 + GTX 1060M x 1
+- Baidu AI Studio (Tesla V100 x 36, For Model I 36 Networks Training)
 
 #### Python Package Requirements
-- Anaconda 4.0.2
-- Python 3.6
-- Pytorch 1.1.0
+- Anaconda 4.7.10
+- python 3.6
+- pytorch 1.1.0
 - keras 2.2.4
 - opencv3
 - sklearn
 - numpy
 - matplotlib
 
+---
 ## Submission Timeline
 Model     | Baseline Acc | Top Result
 :-:       | :-:          | :-:       
@@ -55,6 +60,7 @@ Model I   | None         | 77.08%
 Model II  | 77.08%       | [81.6200%](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/81.6200%25.txt)
 Model III | 78.74%       | [82.1800%](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process/82.1800%25.txt)
 
+---
 ## Detailed Solution
 ### Model I: Several Netural Network Stacking ([DeepLearning](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/tree/master/Stacking-NN))  
 ```
@@ -74,7 +80,7 @@ NetWork Name | Baseline | Descriptions | Online Top1-Acc on Test of 5 folds Merg
 [Net6_Features](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/Net6_Features)| DenseNet | Introduced Feture Engineering (Features: 175)| 61.19% |
 [Net7_MS](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/folds_py/Net7_MS_fold1.py)      | Net1 | Introduced MultiScale | About 76% |
 [Net8_MS_cat](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/folds_py/Net8_MS_cat_fold1.py)  | Net1 | Introduced MultiScale & Concatenate | About 76% |
-  
+
 ### Model II: Txt Processing ([Feature Engineering](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Txt-Process))
 ```
 1) Txt Identical Check
