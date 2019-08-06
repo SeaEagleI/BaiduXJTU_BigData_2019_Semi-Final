@@ -32,6 +32,7 @@ CategoryID | Functions of Areas
 007	| Shopping area
 008	| Administrative district
 009	| Hospital
+
 For more Detailed Task descriptions, please go to [DianShi](https://dianshi.baidu.com/competition/30/question)  
 
 ---
