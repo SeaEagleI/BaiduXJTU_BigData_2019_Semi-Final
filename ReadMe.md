@@ -99,7 +99,7 @@ Steps | Content Descriptions | Oringinal Score | After Improved | Source Code
 ### Model III: Merge & Rebalance the Predicts in Submissions ([Post-processing](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process)）
 ```
 Directly Modify Submission.txt:
-We Compared 81.2440%.txt and 81.5320%.txt, and found that 001 was TOO MANY (4k more than True Value).
+We Compared 81.2440%.txt and 81.6200%.txt, and found that 001 was TOO MANY (4k more than True Value).
 ```
 - *Category Distributions in Our Submissions (Take [81.6200%.txt](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/81.6200%25.txt) for Example)*  
 
@@ -117,7 +117,7 @@ Category | Total Predicts in [81.6200%.txt](https://github.com/SeaEagleI/BaiduXJ
 
 ```
 Therefore, We Merge the Predicts among our ex-Top Submissions. (81.6200%.txt & 81.2440%.txt)
-Based on 81.6200%.txt, whenever it predicts to 001 in 81.5320%.txt and & 00x (x!=3 and x!=5, as 003 and 005 are More-Predicted), we choose 00x as the answer.
+Based on 81.6200%.txt, whenever it predicts to 001 in 81.6200%.txt and & 00x in 81.2440%.txt(x!=3 and x!=5, as 003 and 005 are More-Predicted), we choose 00x as the answer.
 ```
 - Related Source Code ([Submission_Check](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process/Submission_Check.py))
 ```
