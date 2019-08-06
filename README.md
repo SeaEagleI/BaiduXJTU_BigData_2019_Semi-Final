@@ -14,17 +14,22 @@
 - Semi-Final: Rank 18
 
 ## Mission Descriptions
-给定用户访问数据({Area_ID}.txt)和卫星图片({Area_ID}.jpg)，判断城市用地功能，包括以下9个类别, 并对其分类:
-- Residential area
-- School
-- Industrial park
-- Railway station
-- Airport
-- Park
-- Shopping area
-- Administrative district
-- Hospital  
-具体任务描述请见[官网](https://dianshi.baidu.com/competition/30/question) 
+Build models to classify the functions of urban areas({Area_ID}.jpg) with data of satellite images and user behavior({Area_ID}.txt) from given geographical areas.
+- Tables of the functions of urban areas:
+
+CategoryID | Functions of Areas
+:-:        | :-:
+001	| Residential area
+002	| School
+003	| Industrial park
+004	| Railway station
+005	| Airport
+006	| Park
+007	| Shopping area
+008	| Administrative district
+009	| Hospital
+  
+For more Detailed Task descriptions, please go to [DianShi](https://dianshi.baidu.com/competition/30/question) 
 
 ## Environmental Requirements
 
@@ -62,13 +67,13 @@ Trained Networks = 7*5+1 (We only trained fold1 on Net6 due to Its Low Local Acc
 NetWork Name | Baseline | Descriptions | Online Top1-Acc on Test of 5 folds Merged Result
 :-:          | :-:      | :-:          | :-:
 [Net1_raw](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/folds_py/Net1_raw_fold1.py)     | DPN26+Resnext50 | Train with RAW NPYs (40w 182x24 Npys) | 76.21% |
-[Net2_1](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/flods_py/Net2_1_fold1.py)      | Net1 | Introduced Resampled Folds_Split for Train | About 76% |
-[Net3_w](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/flods_py/Net3_w_fold1.py)       | Net1 | Use Class_Ratio are considered into Loss Calculation | About 76% |
-[Net4_TTA](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/flods_py/Net4_TTA_fold1.py)     | Net1 | Introduced TTA (Test Time Augumentation) | About 76% |
-[Net5_HR](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/flods_py/Net5_HR_fold1.py)      | Net1 | Introduced HighResample (linear) |  About 76% |
+[Net2_1](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/folds_py/Net2_1_fold1.py)      | Net1 | Introduced Resampled Folds_Split for Train | About 76% |
+[Net3_w](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/folds_py/Net3_w_fold1.py)       | Net1 | Use Class_Ratio are considered into Loss Calculation | About 76% |
+[Net4_TTA](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/folds_py/Net4_TTA_fold1.py)     | Net1 | Introduced TTA (Test Time Augumentation) | About 76% |
+[Net5_HR](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/folds_py/Net5_HR_fold1.py)      | Net1 | Introduced HighResample (linear) |  About 76% |
 [Net6_Features](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/Net6_Features)| DenseNet | Introduced Feture Engineering (Features: 175)| 61.19% |
-[Net7_MS](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/flods_py/Net7_MS_fold1.py)      | Net1 | Introduced MultiScale | About 76% |
-[Net8_MS_cat](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/flods_py/Net8_MS_cat_fold1.py)  | Net1 | Introduced MultiScale & Concatenate | About 76% |
+[Net7_MS](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/folds_py/Net7_MS_fold1.py)      | Net1 | Introduced MultiScale | About 76% |
+[Net8_MS_cat](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/folds_py/Net8_MS_cat_fold1.py)  | Net1 | Introduced MultiScale & Concatenate | About 76% |
   
 ### Model II: Txt Processing ([Feature Engineering](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Txt-Process))
 ```
@@ -87,7 +92,7 @@ Steps | Content Descriptions | Oringinal Score | After Improved | Source Code
 ### Model III: Merge & Rebalance the Predicts in Submissions ([Post-processing](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process)）
 ```
 Directly Modify Submission.txt:
-We Compared 81.2840%.txt and 81.5320%.txt, and found that 001 was TOO MANY (4k more than True Value).
+We Compared 81.2440%.txt and 81.5320%.txt, and found that 001 was TOO MANY (4k more than True Value).
 ```
 - *Category Distributions in Our Submissions (Take [81.6200%.txt](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/81.6200%25.txt) for Example)*  
 
@@ -96,12 +101,12 @@ Category | Total Predicts in [81.6200%.txt](https://github.com/SeaEagleI/BaiduXJ
 001 | 34542 | 30092 | +4450 | Too Much More
 002 | 22026 | 22763 | -737  | Much Less
 003 | 13247 | 12753 | +494  | More
-004 | 1510  | 1647  | -137  | Almost Accurate
-005 | 4314  | 4123  | +191  | Almost Accurate
+004 | 1510  | 1647  | -137  | Little Less
+005 | 4314  | 4123  | +191  | More
 006 | 12978 | 15671 | -2693 | Much Less
-007 | 4986  | 5283  | -297  | Almost Accurate
+007 | 4986  | 5283  | -297  | Little Less
 008 | 2247  | 3295  | -1048 | Much Less
-009 | 4150  | 4370  | -220  | Almost Accurate
+009 | 4150  | 4370  | -220  | Little Less
 
 ```
 Therefore, We Merge the Predicts among our ex-Top Submissions. (81.6200%.txt & 81.2440%.txt)
