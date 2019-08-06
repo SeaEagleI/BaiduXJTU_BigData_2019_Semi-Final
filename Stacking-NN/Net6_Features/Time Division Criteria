@@ -1,0 +1,11 @@
+early-morning	[5,8]
+morning		[9,10]
+noon		[11,13]
+afternoon	[14,16]
+evening		[17,19]
+night		[20,22]
+midnight	[23,4]
+{
+1:"early-morning",
+
+}
