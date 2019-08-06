@@ -47,11 +47,11 @@
 Model     | Baseline Acc | Top Result
 :-:       | :-:          | :-:       
 Model I   | None         | 77.08%
-Model II  | 77.08%       | 81.62%
-Model III | 78.74%       | 82.18%
+Model II  | 77.08%       | [81.6200%](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process/82.6200%25.txt)
+Model III | 78.74%       | [82.1800%](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process/82.1800%25.txt)
 
 ## Detailed Solution
-### Model I: Several Netural Network Stacking (DeepLearning)  
+### Model I: Several Netural Network Stacking ([DeepLearning](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/tree/master/Stacking-NN))  
 ```
 #Model Descriptions:
 8 Nets
@@ -71,7 +71,7 @@ Net7_MS      | Net1 | Introduced MultiScale | About 76% |
 Net8_MS_cat  | Net1 | Introduced MultiScale & Concatenate | About 76% |
   
 
-### Model II: Txt Processing (Feature Engineering)
+### Model II: Txt Processing ([Feature Engineering](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Txt-Process))
 ```
 1) Txt Identical Check
 2) Multivoters based on Total Times A user Appeared in Same Category
@@ -87,14 +87,14 @@ Steps | Content Descriptions | Oringinal Score | After Improved | Precentage Imp
 
 
 
-### Model III: Merge & Rebalance the Predicts in Submissions (Post-processing）
+### Model III: Merge & Rebalance the Predicts in Submissions ([Post-processing](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process)）
 ```
 Directly Modify Submission.txt:
 We Compared 81.2840%.txt and 81.5320%.txt, and found that 001 was TOO MANY (4k more than True Value).
 ```
 - *Category Distributions in Our Submissions (Take 81.6200%.txt for Example)*  
 
-Category | Total Predicts in 81.6200%.txt | Estimated True Value | Difference (Pred-Estimated) | Evaluation
+Category | Total Predicts in [81.6200%.txt](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process/82.6200%25.txt) | Estimated True Value | Difference (Pred-Estimated) | Evaluation
 :-:      | :-:                            | :-:                  | :-:                         | :-:
 001 | 34542 | 30092 | +4450 | Too Much More
 002 | 22026 | 22763 | -737  | Much Less
@@ -110,7 +110,7 @@ Category | Total Predicts in 81.6200%.txt | Estimated True Value | Difference (P
 Therefore, We Merge the Predicts among our ex-Top Submissions. (81.6200%.txt & 81.2440%.txt)
 Based on 81.6200%.txt, whenever it predicts to 001 in 81.5320%.txt and & 00x (x!=3 and x!=5, as 003 and 005 are More-Predicted), we choose 00x as the answer.
 ```
-- Source Code ([Submission_Check](https://github.com/zhuqunxi/Urban-Region-Function-Classification-/tree/master/ML))
+- Source Code ([Submission_Check](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process/Submission_Check.py))
 ```
 Dict1 = LoadDictFromTxt('81.6200%.txt')
 Dict2 = LoadDictFromTxt('81.2440%.txt')
@@ -121,7 +121,6 @@ for key,val1 in Dict1.items():
         Merge_Dict[key] = val1
     elif '001' in [val1,val2] and '003' not in [val1,val2] and '005' not in [val1,val2]:
         Merge_Dict[key] = val2 if val1=='001' else val1
-        if val2!='001':
     elif val2 in ModCates:
         Merge_Dict[key] = val2
     else:
