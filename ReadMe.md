@@ -87,7 +87,7 @@ NetWork Name | Baseline | Descriptions | Online Top1-Acc on Test of 5 folds Merg
 1) Txt Identical Check
 2) Multivoters based on Total Times A user Appeared in Same Category
 3) Multivoters based on Total Hours A user Appeared in Same Category
-(Step 3 was not completed Because of Limited Computational Resources and Time, only 3/2000 data was processed)
+(Step 3 was not completed Because of Limited Time and Computation Resources, only 3/2000 data was processed)
 Notes. Abbreviate {Preliminary,Semi-Final}-{Train,Test}-Datasets as {P,S}{Tr,Te} ==> {PTr,PTe,STr,STe}
 ```
 Steps | Content Descriptions | Oringinal Score | After Improved | Source Code
@@ -117,7 +117,7 @@ Category | Total Predicts in [81.6200%.txt](https://github.com/SeaEagleI/BaiduXJ
 
 ```
 Therefore, We Merged the Predicts among our ex-Top Submissions. (81.6200%.txt & 81.2440%.txt)
-Based on 81.6200%.txt, whenever it predicts to 001 in 81.6200%.txt and & 00x in 81.2440%.txt(x!=3 and x!=5, as 003 and 005 are More-Predicted), we chose 00x as the new answer.
+Based on 81.6200%.txt, whenever it predicts the same txt as 001 in 81.6200%.txt and & 00x in 81.2440%.txt(x!=3 and x!=5, as 003 and 005 are More-Predicted), we selected 00x as the new answer.
 ```
 - Related Source Code ([Submission_Check](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process/Submission_Check.py))
 ```
