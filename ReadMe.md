@@ -117,7 +117,7 @@ Category | Total Predicts in [81.6200%.txt](https://github.com/SeaEagleI/BaiduXJ
 
 ```
 Therefore, We Merged the Predicts among our ex-Top Submissions. (81.6200%.txt & 81.2440%.txt)
-Based on 81.6200%.txt, whenever it predicts the same txt as 001 in 81.6200%.txt and & 00x in 81.2440%.txt(x!=3 and x!=5, as 003 and 005 are More-Predicted), we selected 00x as the new answer.
+Based on 81.6200%.txt, whenever it predicts the same txt as 001 in 81.6200%.txt and 00x in 81.2440%.txt(x not in [1,3,5] as 003 and 005 are More-Predicted), we choose 00x as our new answer.
 ```
 - Related Source Code ([Submission_Check](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process/Submission_Check.py))
 ```
