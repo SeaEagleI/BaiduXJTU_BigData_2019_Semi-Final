@@ -17,7 +17,7 @@
 ---
 ## Mission Descriptions
 
-Build models to classify the functions of urban areas({Area_ID}.jpg) with data of satellite images and user behavior({Area_ID}.txt) from given geographical areas.  
+Build models to classify the functions of urban areas with data of satellite images({Area_ID}.jpg) and user behavior({Area_ID}.txt) from given geographical areas.  
 
 - Tables of the functions of urban areas:
 
@@ -59,7 +59,7 @@ Model     | Baseline Acc | Top Result
 :-:       | :-:          | :-:       
 Model I   | None         | 77.08%
 Model II  | 77.08%       | [81.6200%](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/81.6200%25.txt)
-Model III | 78.74%       | [82.1800%](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process/82.1800%25.txt)
+Model III | [81.6200%](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/81.6200%25.txt)<br>[81.2440%](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post-Process/81.2440%25.txt)       | [82.1800%](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process/82.1800%25.txt)
 
 ---
 ## Detailed Solution
@@ -99,7 +99,7 @@ Steps | Content Descriptions | Oringinal Score | After Improved | Source Code
 ### Model III: Merge & Rebalance the Predicts in Submissions ([Post-processing](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process)）
 ```
 Directly Modify Submission.txt:
-We Compared 81.2440%.txt and 81.6200%.txt, and found that 001 was TOO MANY (4k more than True Value).
+We Compared predicts in 81.2440%.txt and 81.6200%.txt, finding that 001 was TOO MANY (4k more than True Value).
 ```
 - *Category Distributions in Our Submissions (Take [81.6200%.txt](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/81.6200%25.txt) for Example)*  
 
