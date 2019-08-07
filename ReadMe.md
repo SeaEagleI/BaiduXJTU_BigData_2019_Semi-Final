@@ -68,7 +68,7 @@ Model III | 78.74%       | [82.1800%](https://github.com/SeaEagleI/BaiduXJTU_Big
 #Model Descriptions:
 8 Nets
 5 folds Stacking
-Trained Networks = 7*5+1 (We only trained fold1 on Net6 due to Its Low Local Acc)
+Trained Networks = 7*5+1 (We only trained fold1 on Net6 because of Its Low Local Acc)
 ```  
 
 NetWork Name | Baseline | Descriptions | Online Top1-Acc on Test of 5 folds Merged Result
@@ -116,8 +116,8 @@ Category | Total Predicts in [81.6200%.txt](https://github.com/SeaEagleI/BaiduXJ
 009 | 4150  | 4370  | -220  | Little Less
 
 ```
-Therefore, We Merge the Predicts among our ex-Top Submissions. (81.6200%.txt & 81.2440%.txt)
-Based on 81.6200%.txt, whenever it predicts to 001 in 81.6200%.txt and & 00x in 81.2440%.txt(x!=3 and x!=5, as 003 and 005 are More-Predicted), we choose 00x as the answer.
+Therefore, We Merged the Predicts among our ex-Top Submissions. (81.6200%.txt & 81.2440%.txt)
+Based on 81.6200%.txt, whenever it predicts to 001 in 81.6200%.txt and & 00x in 81.2440%.txt(x!=3 and x!=5, as 003 and 005 are More-Predicted), we chose 00x as the new answer.
 ```
 - Related Source Code ([Submission_Check](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process/Submission_Check.py))
 ```
