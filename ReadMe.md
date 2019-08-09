@@ -75,7 +75,7 @@ NetWork Name | Baseline | Descriptions | Online Top1-Acc on Test of 5 folds Merg
 :-:          | :-:      | :-:          | :-:
 [Net1_raw](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/folds_py/Net1_raw_fold1.py)     | DPN26+Resnext50 | Train with RAW NPYs (40w 182x24 Npys) | 76.21% |
 [Net2_1](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/folds_py/Net2_1_fold1.py)      | Net1 | Introduced Resampled Folds_Split for Train | About 76% |
-[Net3_w](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/folds_py/Net3_w_fold1.py)       | Net1 | Use Class_Ratio are considered into Loss Calculation | About 76% |
+[Net3_w](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/folds_py/Net3_w_fold1.py)       | Net1 | Class_Ratio were considered into Loss Calculation | About 76% |
 [Net4_TTA](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/folds_py/Net4_TTA_fold1.py)     | Net1 | Introduced TTA (Test Time Augumentation) | About 76% |
 [Net5_HR](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/folds_py/Net5_HR_fold1.py)      | Net1 | Introduced HighResample (linear) |  About 76% |
 [Net6_Features](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Stacking-NN/Net6_Features)| DenseNet | Introduced Feture Engineering (Features: 175)| 61.19% |
