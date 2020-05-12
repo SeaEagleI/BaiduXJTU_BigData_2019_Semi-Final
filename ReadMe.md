@@ -38,7 +38,7 @@ For more Detailed Task descriptions, please go to [DianShi](https://dianshi.baid
 ---
 ## Environmental Requirements
 
-#### OS & GPU Configurations:
+#### OS & GPU Configurations
 - Ubuntu 18.04.1 LTS
 - GTX 1080Ti x 1 + GTX 1060M x 1
 - Baidu AI Studio (Tesla V100 x 36, For Model I 36 Networks Training)
@@ -65,10 +65,12 @@ Model III | [81.6200%](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-
 ## Detailed Solution
 ### Model I: Several Netural Network Stacking ([DeepLearning](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/tree/master/Stacking-NN))  
 ```
-#Model Descriptions:
+# Model Descriptions:
 8 Nets
 5 folds Stacking
-Trained Networks = 7*5+1 (We only trained fold1 on Net6 because of Its Low Local Acc)
+Trained Networks = 7*5+1 (We only trained fold1 on Net6 because of Its Low Local Acc).
+# Result:
+After 36 NN Stacking, we reached a top online acc of 77.08%.
 ```  
 
 NetWork Name | Baseline | Descriptions | Online Top1-Acc on Test of 5 folds Merged Result
@@ -84,11 +86,15 @@ NetWork Name | Baseline | Descriptions | Online Top1-Acc on Test of 5 folds Merg
 
 ### Model II: Txt Processing ([Feature Engineering](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Txt-Process))
 ```
-1) Txt Identical Check
-2) Multivoters based on Total Times A user Appeared in Same Category
-3) Multivoters based on Total Hours A user Appeared in Same Category
-(Step 3 was not completed Because of Limited Time and Computation Resources, only 3/2000 data was processed)
-Notes. Abbreviate {Preliminary,Semi-Final}-{Train,Test}-Datasets as {P,S}{Tr,Te} ==> {PTr,PTe,STr,STe}
+# Steps:
+1) Txt Identical Check (Completed)
+2) Multivoters based on Total Times A user Appeared in Same Category (Completed)
+3) Multivoters based on Total Hours A user Appeared in Same Category (Only 3/2000 json files were processed)
+# Result:
+After above 3 steps, we got a submission of 81.62%. (81.6200%.txt)
+# Notes:
+[1] Step 3 was not completed Because of Limited Time and Computation Resources, only 3/2000 data was processed.
+[2] In this project we abbreviate {Preliminary,Semi-Final}-{Train,Test}-Datasets as {P,S}{Tr,Te} ==> {PTr,PTe,STr,STe}.
 ```
 Steps | Content Descriptions | Oringinal Score | After Improved | Source Code
 :-:   | :-:                  | :-:             | :-:            | :-:
@@ -118,9 +124,10 @@ Category | Total Predicts in [81.6200%.txt](https://github.com/SeaEagleI/BaiduXJ
 ```
 Therefore, We Merged the Predicts among our ex-Top Submissions. (81.6200%.txt & 81.2440%.txt)
 Based on 81.6200%.txt, whenever it predicts the same txt as 001 in 81.6200%.txt and 00x in 81.2440%.txt(x not in [1,3,5] as 003 and 005 are More-Predicted), we choose 00x as our new answer.
+After this operation, we got our final best submission 82.1800%.txt, which reached 82.18%.
 ```
 - Related Source Code ([Submission_Check](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process/Submission_Check.py))
-```
+```python3
 Dict1 = LoadDictFromTxt('81.6200%.txt')
 Dict2 = LoadDictFromTxt('81.2440%.txt')
 
