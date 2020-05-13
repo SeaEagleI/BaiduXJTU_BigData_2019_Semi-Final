@@ -37,7 +37,7 @@ CategoryID | Functions of Areas
 008	| Administrative district
 009	| Hospital
 
-For more Detailed Task descriptions, please go to [DianShi](https://dianshi.baidu.com/competition/30/question)  
+For more Detailed Task descriptions, please go to [赛题详情](https://dianshi.baidu.com/competition/30/question)  
 
 ---
 ## Environmental Requirements
