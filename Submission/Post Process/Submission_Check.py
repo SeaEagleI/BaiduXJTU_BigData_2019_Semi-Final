@@ -3,10 +3,10 @@ import os,os.path as op
 import random
 import re
 
-txt1 = '82.0370%.txt'
-txt2 = '82.1800%.txt'
-#txt1 = '../81.6200%.txt'
-#txt2 = '../81.2440%.txt'
+# txt1 = '82.0370%.txt'
+# txt2 = '82.1800%.txt'
+txt1 = '../81.6200%.txt'
+txt2 = '../81.2440%.txt'
 turns = 10
 
 CateEstimates = {'001': 30092,
@@ -106,14 +106,14 @@ def MergeDict(Dict1,Dict2,ModCates):
                  _prior,_prior/len(Dict1)*100,))
     return Merge_Dict
 
-def SubmissionGenerator(replace_list,num,base_txt=txt1):
-    txt = open(base_txt).read()
-    for i in replace_list:
-        diff = diffs[i]
-        ori,repl = '{}\t{}'.format(diff[0],diff[1]),'{}\t{}'.format(diff[0],diff[2])
-        txt = txt.replace(ori,repl)
-    open('submission_repl_{}.txt'.format(num),'w+').write(txt)
-#    open('rand_list_{}.txt'.format(num),'w+').write(str(replace_list))
+# def SubmissionGenerator(replace_list,num,base_txt=txt1):
+#     txt = open(base_txt).read()
+#     for i in replace_list:
+#         diff = diffs[i]
+#         ori,repl = '{}\t{}'.format(diff[0],diff[1]),'{}\t{}'.format(diff[0],diff[2])
+#         txt = txt.replace(ori,repl)
+#     open('submission_repl_{}.txt'.format(num),'w+').write(txt)
+# #    open('rand_list_{}.txt'.format(num),'w+').write(str(replace_list))
 
 
 Dict1 = LoadDictFromTxt(txt1)
@@ -124,27 +124,26 @@ Dict2 = LoadDictFromTxt(txt2)
 #Statistics(Dict2)
 #Statistics(Dict3)
 #
-#priorlist = ['001',
-##             '006',
-##             '003',
-##             '008'
-#             ]
-#submit_txt = MergeName(txt1,txt2,'{}_MOD'.format('_'.join(priorlist)))
-#Merge_Dict = MergeDict(Dict1,Dict2,[])
-###Merge_Dict = MergeDict(Dict1,Dict2,['006'])
-###Merge_Dict = MergeDict(Dict1,Dict2,['003','008'])
-#WriteDictToTxt(submit_txt,Merge_Dict)
-#Statistics(Merge_Dict)
+priorlist = ['001',
+#             '006',
+#             '003',
+#             '008'
+            ]
+submit_txt = MergeName(txt1,txt2,'{}_MOD'.format('_'.join(priorlist)))
+Merge_Dict = MergeDict(Dict1,Dict2,[])
+##Merge_Dict = MergeDict(Dict1,Dict2,['006'])
+##Merge_Dict = MergeDict(Dict1,Dict2,['003','008'])
+WriteDictToTxt(submit_txt,Merge_Dict)
+Statistics(Merge_Dict)
 
 
-diffs = CmpTxt(txt1,txt2,False)
-print('Diffs: {}'.format(len(diffs)))
-MAX_LEN = len(diffs)
-REPL_SIZE = int(MAX_LEN/2)
-for i in range(turns):
-    REPL_SIZE = random.randint(1,int(MAX_LEN/2))
-    repl_list = [random.randint(0,MAX_LEN-1) for i in range(REPL_SIZE)]
-    curlist = os.listdir()
-    next_num = GetCurNum()+1
-    SubmissionGenerator(repl_list,next_num,base_txt=txt1)
-
+# diffs = CmpTxt(txt1,txt2,False)
+# print('Diffs: {}'.format(len(diffs)))
+# MAX_LEN = len(diffs)
+# REPL_SIZE = int(MAX_LEN/2)
+# for i in range(turns):
+#     REPL_SIZE = random.randint(1,int(MAX_LEN/2))
+#     repl_list = [random.randint(0,MAX_LEN-1) for i in range(REPL_SIZE)]
+#     curlist = os.listdir()
+#     next_num = GetCurNum()+1
+#     SubmissionGenerator(repl_list,next_num,base_txt=txt1)
