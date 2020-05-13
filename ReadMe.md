@@ -2,6 +2,10 @@
 # **[Urban Region Function Classification](https://dianshi.baidu.com/competition/30/rank) Top18 Solution**
 
 ---
+## Competetition Brief Intro.
+[大赛介绍](http://www.ikcest.org/bigdata2019/?from=007)
+
+---
 ## Team Brief Intro.
 #### Team Name: 
 - 浑南摸鱼队
