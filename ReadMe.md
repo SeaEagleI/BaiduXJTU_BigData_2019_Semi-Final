@@ -3,7 +3,7 @@
 
 ---
 ## Competetition Intro.
-- [IKCEST首届“一带一路”国际大数据竞赛](http://www.ikcest.org/bigdata2019/?from=007)
+- [IKCEST首届“一带一路”国际大数据竞赛](http://www.ikcest.org/bigdata2019/
 
 ## Team Brief Intro.
 #### Team Name: 
