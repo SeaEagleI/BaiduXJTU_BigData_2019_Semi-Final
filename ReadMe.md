@@ -1,5 +1,5 @@
 # BaiduXJTU_BigData_2019_Semi-Final
-# **[Urban Region Function Classification](https://dianshi.baidu.com/competition/30/rank) Top18 Solution**
+# **Urban Region Function Classification [Top18](https://dianshi.baidu.com/competition/30/rank) Solution**
 
 ---
 ## Competetition Intro.
