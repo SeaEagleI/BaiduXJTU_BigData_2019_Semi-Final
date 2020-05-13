@@ -123,22 +123,38 @@ Category | Total Predicts in [81.6200%.txt](https://github.com/SeaEagleI/BaiduXJ
 
 ```
 Therefore, We Merged the Predicts among our ex-Top Submissions. (81.6200%.txt & 81.2440%.txt)
-Based on 81.6200%.txt, whenever it predicts the same txt as 001 in 81.6200%.txt and 00x in 81.2440%.txt(x not in [1,3,5] as 003 and 005 are More-Predicted), we choose 00x as our new answer.
+Based on 81.6200%.txt, whenever it predicts the same result as 001 in 81.6200%.txt and 00x in 81.2440%.txt(x not in [1,3,5] as 003 and 005 are More-Predicted), we choose 00x as our new answer.
 After this operation, we got our final best submission 82.1800%.txt, which reached 82.18%.
 ```
 - Related Source Code ([Submission_Check](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process/Submission_Check.py))
 ```python3
+def MergeDict(Dict1,Dict2,ModCates):
+    Merge_Dict = {}
+    _identical,_new_choice,_prior = 0,0,0
+    for key,val1 in Dict1.items():
+        val2 = Dict2[key]
+        if val1==val2:
+            Merge_Dict[key] = val1
+        elif '001' in [val1,val2] and '003' not in [val1,val2] and '005' not in [val1,val2]:
+            Merge_Dict[key] = val2 if val1=='001' else val1
+        elif val2 in ModCates:
+            Merge_Dict[key] = val2
+        else:
+            Merge_Dict[key] = val1
+    return Merge_Dict
+
 Dict1 = LoadDictFromTxt('81.6200%.txt')
 Dict2 = LoadDictFromTxt('81.2440%.txt')
 
-for key,val1 in Dict1.items():
-    val2 = Dict2[key]
-    if val1==val2:
-        Merge_Dict[key] = val1
-    elif '001' in [val1,val2] and '003' not in [val1,val2] and '005' not in [val1,val2]:
-        Merge_Dict[key] = val2 if val1=='001' else val1
-    elif val2 in ModCates:
-        Merge_Dict[key] = val2
-    else:
-        Merge_Dict[key] = val1
+priorlist = ['001',
+#             '006',
+#             '003',
+#             '008'
+            ]
+submit_txt = MergeName(txt1,txt2,'{}_MOD'.format('_'.join(priorlist)))
+Merge_Dict = MergeDict(Dict1,Dict2,[])
+##Merge_Dict = MergeDict(Dict1,Dict2,['006'])
+##Merge_Dict = MergeDict(Dict1,Dict2,['003','008'])
+WriteDictToTxt(submit_txt,Merge_Dict)
+Statistics(Merge_Dict)
 ```
