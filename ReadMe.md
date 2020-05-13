@@ -105,7 +105,7 @@ Steps | Content Descriptions | Oringinal Score | After Improved | Source Code
 ### Model III: Merge & Rebalance the Predicts in Submissions ([Post-processing](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process)）
 ```
 Directly Modify Submission.txt:
-We Compared predicts in 81.2440%.txt and 81.6200%.txt, finding that 001 was TOO MANY (4k more than True Value).
+We Compared predicts in 81.2440%.txt and 81.6200%.txt, finding that 001 was TOO MANY (4k more than True Value), 003/005 were a bit more-predicted, and others were all less-predicted.
 ```
 - *Category Distributions in Our Submissions (Take [81.6200%.txt](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/81.6200%25.txt) for Example)*  
 
@@ -122,8 +122,10 @@ Category | Total Predicts in [81.6200%.txt](https://github.com/SeaEagleI/BaiduXJ
 009 | 4150  | 4370  | -220  | Little Less
 
 ```
-Therefore, We Merged the Predicts among our ex-Top Submissions. (81.6200%.txt & 81.2440%.txt)
-Based on 81.6200%.txt, whenever it predicts the same result as 001 in 81.6200%.txt and 00x in 81.2440%.txt(x not in [1,3,5] as 003 and 005 are More-Predicted), we choose 00x as our new answer.
+Therefore, We Merged the Predicts among our ex-Top2 Submissions. (81.6200%.txt & 81.2440%.txt)
+Strategy & Rules:
+1) Compare & Merge the predicts in the two txt file by Replacing those '001's to other less-predicted categories.
+2) While the two gives the same prediction or both predictions are in More-Predicted Categories ['001','003','005'], Choose the answer in 81.6200%.txt as result Beacause of its Higher Acc.
 After this operation, we got our final best submission 82.1800%.txt, which reached 82.18%.
 ```
 - Related Source Code ([Submission_Check](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process/Submission_Check.py))
@@ -143,8 +145,10 @@ def MergeDict(Dict1,Dict2,ModCates):
             Merge_Dict[key] = val1
     return Merge_Dict
 
-Dict1 = LoadDictFromTxt('81.6200%.txt')
-Dict2 = LoadDictFromTxt('81.2440%.txt')
+txt1 = '../81.6200%.txt'
+txt2 = '../81.2440%.txt'
+Dict1 = LoadDictFromTxt(txt1)
+Dict2 = LoadDictFromTxt(txt2)
 
 priorlist = ['001',
 #             '006',
