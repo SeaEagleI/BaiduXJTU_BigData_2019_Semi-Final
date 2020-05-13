@@ -5,7 +5,6 @@
 ## Competetition Brief Intro.
 [大赛介绍](http://www.ikcest.org/bigdata2019/?from=007)
 
----
 ## Team Brief Intro.
 #### Team Name: 
 - 浑南摸鱼队
@@ -65,7 +64,6 @@ Model I   | None         | 77.08%
 Model II  | 77.08%       | [81.6200%](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/81.6200%25.txt)
 Model III | [81.6200%](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/81.6200%25.txt)<br>[81.2440%](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process/81.2440%25.txt)       | [82.1800%](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/Post%20Process/82.1800%25.txt)
 
----
 ## Detailed Solution
 ### Model I: Several Netural Network Stacking ([DeepLearning](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/tree/master/Stacking-NN))  
 ```
