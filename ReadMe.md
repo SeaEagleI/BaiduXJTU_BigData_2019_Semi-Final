@@ -4,6 +4,7 @@
 ---
 ## Competetition Intro.
 - [IKCEST首届“一带一路”国际大数据竞赛](http://www.ikcest.org/bigdata2019/)
+- [赛题：基于遥感影像和用户行为的城市区域功能分类](https://dianshi.bce.baidu.com/competition/30/rule)
 
 ## Team Brief Intro.
 #### Team Name: 
