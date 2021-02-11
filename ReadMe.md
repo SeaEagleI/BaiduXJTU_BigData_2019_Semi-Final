@@ -165,3 +165,6 @@ Merge_Dict = MergeDict(Dict1,Dict2,[])
 WriteDictToTxt(submit_txt,Merge_Dict)
 Statistics(Merge_Dict)
 ```
+---
+## Other Descriptions
+- [回忆录 - IKCEST首届“一带一路”国际大数据竞赛(2019)获奖经历](https://blog.csdn.net/Flying_Dutch/article/details/106134801)
