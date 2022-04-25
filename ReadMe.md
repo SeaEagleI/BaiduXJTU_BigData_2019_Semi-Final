@@ -113,7 +113,7 @@ We Compared predicts in 81.2440%.txt and 81.6200%.txt, finding that 001 was TOO 
 ```
 - *Category Distributions in Our Submissions (Take [81.6200%.txt](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/81.6200%25.txt) for Example)*  
 
-Category | Total Predicts in [81.6200%.txt](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/81.6200%25.txt) | Estimated True Value | Difference (Pred-Estimated) | Evaluation
+Category | Total Predicts in [81.6200%.txt](https://github.com/SeaEagleI/BaiduXJTU_BigData_2019_Semi-Final/blob/master/Submission/81.6200%25.txt) | Estimated True Value | Difference (Pred-Estimated) | Desc
 :-:      | :-:                            | :-:                  | :-:                         | :-:
 001 | 34542 | 30092 | +4450 | Too Much More
 002 | 22026 | 22763 | -737  | Much Less
